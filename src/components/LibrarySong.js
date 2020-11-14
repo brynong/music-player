@@ -1,13 +1,13 @@
 import React from 'react';
 
 
-const LibrarySong = ({ song, songs, setCurrentSong, audioRef, isPlaying, setSongs, key }) => {
+const LibrarySong = ({ song, songs, setCurrentSong, audioRef, isPlaying, setSongs, id }) => {
 
     const songSelectHandler = () => {
         setCurrentSong(song);
         //Add active state
         const newSongs = songs.map((song) => {
-            if (song.id === key) {
+            if (song.id === id) {
                 return {
                     ...song,
                     active: true,
@@ -16,7 +16,7 @@ const LibrarySong = ({ song, songs, setCurrentSong, audioRef, isPlaying, setSong
                 return {
                     ...song,
                     active: false,
-                }
+                };
             }
         });
 
